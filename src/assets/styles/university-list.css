@@ -1,0 +1,95 @@
+/* Style for the university list */
+.university-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Style for each university item */
+  .university-item {
+    margin-bottom: 20px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Style for university name */
+  .university-info {
+    flex: 1;
+    max-width: 70%;
+  }
+  
+  .university-name {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Style for university details */
+  .university-details {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  /* Style for university link */
+  .university-link {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+  }
+  
+  .university-link:hover {
+    color: #0056b3;
+  }
+  
+  /* Style for action buttons */
+  .action-buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  /* Style for detail link */
+  .detail-link, .delete-button {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .detail-link {
+    background-color: #007bff;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+    margin-left: 10px;
+  }
+  
+  .detail-link:hover, .delete-button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Responsive Styles */
+  @media only screen and (max-width: 768px) {
+    .university-item {
+      flex-direction: column;
+    }
+    
+    .university-details {
+      order: 1;
+      margin-top: 0;
+    }
+    
+    .action-buttons {
+      margin-top: 20px;
+      display: flex;
+      align-items: stretch;
+    }
+  }
+  

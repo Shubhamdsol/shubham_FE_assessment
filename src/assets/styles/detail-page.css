@@ -1,0 +1,64 @@
+/* Container styles */
+.details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 50px;
+  border: 1px solid #ccc;
+}
+
+/* Heading styles */
+.details-container h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333333;
+}
+
+/* Paragraph styles */
+.details-container p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #555555;
+}
+
+/* Loading indicator styles */
+.loading-indicator {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+  color: #666666;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .details-container {
+    padding: 10px;
+  }
+
+  .details-container h2 {
+    font-size: 20px;
+  }
+
+  .details-container p {
+    font-size: 16px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.details-container {
+  animation: fadeIn 0.5s ease;
+}
