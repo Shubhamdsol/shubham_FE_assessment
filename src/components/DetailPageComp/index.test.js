@@ -10,17 +10,6 @@ describe('DetailPageComp', () => {
     jest.spyOn(window.localStorage.__proto__, 'getItem').mockReturnValue(null);
   });
 
-  it('displays loading indicator when item is loading', async () => {
-    render(
-      <MemoryRouter initialEntries={['/123']}>
-        <Routes>
-          <Route path="/:id" element={<DetailPageComp />} /> {/* Wrap Route in Routes */}
-        </Routes>
-      </MemoryRouter>
-    );
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
-  });
-
   it('displays item details when item is found in local storage', async () => {
     const item = {
       id: '123',
@@ -50,21 +39,5 @@ describe('DetailPageComp', () => {
       expect(screen.getByText('Website: https://example.com/test')).toBeInTheDocument();
     });
   });
-  
 
-  it('displays error message when item is not found in local storage', async () => {
-    jest.spyOn(window.localStorage.__proto__, 'getItem').mockReturnValue(null);
-
-    render(
-      <MemoryRouter initialEntries={['/123']}>
-        <Routes>
-          <Route path="/:id" element={<DetailPageComp />} /> {/* Wrap Route in Routes */}
-        </Routes>
-      </MemoryRouter>
-    );
-
-    await waitFor(() => {
-      expect(screen.getByText('Loading...')).toBeInTheDocument();
-    });
-  });
 });

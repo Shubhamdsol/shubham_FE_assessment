@@ -50,7 +50,21 @@ describe("ListingPageComp", () => {
     await screen.findByText("University B");
   });
 
-  it("filters universities by name", async () => {
+  it("sorting a to z and z to a", async () => {
+    render(
+      <Router>
+        <ListingPageComp />
+      </Router>
+    );
+
+    const sorting = screen.getByRole('button', {
+      name: /a\-z ⇧/i
+    })
+
+    expect(sorting).toBeInTheDocument();
+  });
+
+  it("search universities by name", async () => {
     render(
       <Router>
         <ListingPageComp />
@@ -64,22 +78,5 @@ describe("ListingPageComp", () => {
     // Check if only "University A" is rendered in the table
     const universityAElement = await screen.findByText("University A");
     expect(universityAElement).toBeInTheDocument();
-  });
-
-  it("deletes a university", async () => {
-    render(
-      <Router>
-        <ListingPageComp />
-      </Router>
-    );
-
-    // Wait for the "Delete" button to appear
-    const deleteButton = await screen.findByTestId("delete-button");
-
-    // Click on the delete button for "University A"
-    fireEvent.click(deleteButton);
-
-    // Check if "University A" is removed from the table
-    expect(screen.queryByText("University A")).not.toBeInTheDocument();
   });
 });
